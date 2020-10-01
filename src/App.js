@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Todo from "./Components/Todo";
+import Form from "./Components/Form";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -8,10 +8,18 @@ function App() {
       text: "Walk the dog",
       isCompleted: false,
     },
+    {
+      text: "Go to the gym",
+      isCompleted: false,
+    },
+    {
+      text: "Take out the trash",
+      isCompleted: false,
+    },
   ]);
   return (
     <div className="App">
-      <Todo />
+      <Form />
     </div>
   );
 }
