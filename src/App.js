@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Form from "./Components/Form";
+import Todo from "./Components/Todo";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -17,9 +18,18 @@ function App() {
       isCompleted: false,
     },
   ]);
+  const addTodo = (text) => {
+    const newTodo = [...todos, { text }];
+    setTodos(newTodo);
+  };
   return (
     <div className="App">
-      <Form />
+      <Form addTodo={addTodo} />
+      <div className="todo-list">
+        {todos.map((todo, index) => (
+          <Todo key={index} index={index} todo={todo} />
+        ))}
+      </div>
     </div>
   );
 }
