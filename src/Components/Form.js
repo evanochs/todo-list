@@ -17,7 +17,7 @@ function Form({ addTodo }) {
           id="new-todo"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter a Todo..."
+          placeholder="Add Todo..."
         />
         <button>Enter</button>
       </form>

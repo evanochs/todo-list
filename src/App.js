@@ -19,15 +19,35 @@ function App() {
     },
   ]);
   const addTodo = (text) => {
-    const newTodo = [...todos, { text }];
-    setTodos(newTodo);
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
+  };
+  const completeTodo = (index) => {
+    const newTodos = [...todos];
+    if (newTodos[index].isCompleted === false) {
+      newTodos[index].isCompleted = true;
+    } else {
+      newTodos[index].isCompleted = false;
+    }
+    setTodos(newTodos);
+  };
+  const deleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
   return (
     <div className="App">
       <Form addTodo={addTodo} />
       <div className="todo-list">
         {todos.map((todo, index) => (
-          <Todo key={index} index={index} todo={todo} />
+          <Todo
+            key={index}
+            index={index}
+            todo={todo}
+            completeTodo={completeTodo}
+            deleteTodo={deleteTodo}
+          />
         ))}
       </div>
     </div>
