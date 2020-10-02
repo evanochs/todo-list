@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Styles/Form.css";
 
 function Form({ addTodo }) {
   const [value, setValue] = useState("");
@@ -9,7 +10,7 @@ function Form({ addTodo }) {
     setValue("");
   };
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

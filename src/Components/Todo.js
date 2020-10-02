@@ -4,11 +4,21 @@ import "./Styles/Todo.css";
 function Todo({ todo, index, completeTodo, deleteTodo }) {
   return (
     <div className="todo-container">
-      <p style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
+      <p
+        className="todo-text"
+        style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+      >
         {todo.text}
       </p>
-      <button onClick={() => completeTodo(index)}>Check</button>
-      <button onClick={() => deleteTodo(index)}>Delete</button>
+      <button
+        className="btn complete-button"
+        onClick={() => completeTodo(index)}
+      >
+        ✓
+      </button>
+      <button className="btn delete-button" onClick={() => deleteTodo(index)}>
+        X
+      </button>
     </div>
   );
 }

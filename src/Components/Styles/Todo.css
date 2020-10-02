@@ -1,7 +1,10 @@
 .todo-container {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
+}
+.todo-text {
+  margin-right: auto;
+}
+.btn {
+  margin-left: 10px;
 }

@@ -1,5 +1,13 @@
-* {
-  padding: 0;
-  margin: 0;
+.App {
+  width: 300px;
+  height: auto;
   box-sizing: border-box;
+  margin: 0 auto;
+}
+.todo-list {
+  width: 300px;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
